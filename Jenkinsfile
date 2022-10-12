@@ -5,9 +5,10 @@ pipeline {
             steps {
                 echo 'Hello World'
                 script {
-                    def repo = ['https://github.com/ajaylakshmandas/first.git', 'https://github.com/ajaylakshmandas/second.git']
-                    for (int i = 0; i < repo.size(); ++i) {
-                        echo "Testing the ${repo[i]} repo"
+                    bat '''git init '''
+                    def repo = ['https://github.com/ajaylakshmandas/one.git','https://github.com/ajaylakshmandas/two.git']
+                    for (int i = 0; i < repo.size(); ++i){
+                        echo " repo ${repo[i]}"
                     }
                 }
             }
